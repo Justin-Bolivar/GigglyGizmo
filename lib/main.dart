@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'GigglyGizmo',
       initialRoute: '/',
       home:
-          HomeScreen(), //ichange ni para maka view ka sa imong page ganahan i tanaw
+          HomeScreen(), //ichange ni para maka view ka sa imong page ganahan i tanaw na screen
     );
   }
 }
