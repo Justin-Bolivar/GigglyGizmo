@@ -1,0 +1,1 @@
+//after finishing to register move to homescreen page
