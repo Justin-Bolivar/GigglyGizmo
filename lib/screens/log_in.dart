@@ -39,7 +39,6 @@ class LogIn extends StatelessWidget {
                         width: 1.5, color: Color(0xffD7F2EC)),
                       borderRadius: BorderRadius.circular(10.0),
                       ),
-                      hintText: 'Enter Username',
                       label: Text('Username',style: GoogleFonts.roboto(
                             textStyle: const TextStyle(color: Color(0xffD7F2EC)
                             ),),),
@@ -57,7 +56,6 @@ class LogIn extends StatelessWidget {
                         width: 1.5, color: Color(0xffD7F2EC)),
                       borderRadius: BorderRadius.circular(10.0),
                       ),
-                      hintText: 'Enter Password',
                       label: Text('Password',style: GoogleFonts.roboto(
                             textStyle: const TextStyle(color: Color(0xffD7F2EC)
                             ),),),
