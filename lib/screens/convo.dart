@@ -1,6 +1,7 @@
 // back button goes to homescreen
 
 import 'package:flutter/material.dart';
+import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:gigglygizmo/screens/homescreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,6 +19,44 @@ class Conversation extends StatelessWidget {
             height: double.infinity,
             width: double.infinity,
             alignment: Alignment.center,
+          ),
+          ChatBubble(
+            clipper: ChatBubbleClipper1(type: BubbleType.sendBubble),
+            alignment: Alignment.bottomRight,
+            margin: const EdgeInsets.only(bottom: 100),
+            backGroundColor: const Color(0xff9DEAD8),
+            child: Container(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.7,
+              ),
+              child: Text(
+                "Hello Gizmo I am currently free and I am looking for someone to talk to are you available right now?",
+                style: GoogleFonts.chivo(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w100,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+          ChatBubble(
+            alignment: Alignment.bottomLeft,
+            margin: const EdgeInsets.only(bottom: 190),
+            clipper: ChatBubbleClipper1(type: BubbleType.receiverBubble),
+            backGroundColor: const Color(0xff8E98A8),
+            child: Container(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width * 0.7,
+              ),
+              child: Text(
+                "Hello I am Giggly Gizmo your Language Buddy   ฅ^•ﻌ•^ฅ",
+                style: GoogleFonts.chivo(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w100,
+                  fontSize: 15,
+                ),
+              ),
+            ),
           ),
           SingleChildScrollView(
             child: Stack(
@@ -81,10 +120,6 @@ class Conversation extends StatelessWidget {
                       alignment: Alignment.center,
                     ),
                   ),
-                ],
-              ),
-              Stack(
-                children: [
                   Positioned(
                     top: 310,
                     left: 130,
