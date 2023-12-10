@@ -19,32 +19,39 @@ class Conversation extends StatelessWidget {
             width: double.infinity,
             alignment: Alignment.center,
           ),
-          Stack(
-            //message field temporary placeholder before real textfield
-            children: [
-              Positioned(
-                bottom: 10,
-                left: 40,
-                child: Image.asset('assets/border.png'),
-              ),
-              Positioned(
-                bottom: 30,
-                right: 55,
-                child: Image.asset('assets/mic.png'),
-              ),
-              Positioned(
-                bottom: 30,
-                left: 60,
-                child: Text(
-                  'type message here.....',
-                  style: GoogleFonts.chivo(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w200,
-                    fontSize: 15,
+          SingleChildScrollView(
+            child: Stack(
+              children: [
+                const SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 30.0,
+                    left: 30.0,
+                    top: 620.0,
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      suffixIcon: Image.asset('assets/mic.png'),
+                      labelText: 'type message here...',
+                      labelStyle: GoogleFonts.chivo(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w200,
+                        fontSize: 15,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                            width: 1.5, color: Color(0xffD7F2EC)),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      fillColor: const Color(0xffD8D8DD),
+                      filled: false,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Stack(
             children: [
