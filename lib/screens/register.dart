@@ -188,6 +188,8 @@ class _RegisterState extends State<Register> {
     if (user != null && password==verifyPassword) {
       Fluttertoast.showToast(msg: "User is successfully created");
       Navigator.pushNamed(context, "/home");
+      } else if (password != verifyPassword) {
+      Fluttertoast.showToast(msg: "Password doesn't match");
     } else {
       Fluttertoast.showToast(msg: "Some error happend");
     }
