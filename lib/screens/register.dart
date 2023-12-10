@@ -1,7 +1,10 @@
 //after finishing to register move to homescreen page
 
 import 'package:flutter/material.dart';
+import 'package:gigglygizmo/screens/homescreen.dart';
+import 'package:gigglygizmo/screens/log_in.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
 
 class Register extends StatelessWidget {
   const Register({super.key});
@@ -31,95 +34,69 @@ class Register extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 30.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                        width: 1.5, color: Color(0xffD7F2EC)),
-                      borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      label: Text('Username',style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)
-                            ),),),
-                      fillColor: const Color(0xffD8D8DD),
-                      filled: false,
-                    ),
-                  ),
+                const Padding(
+                  padding:
+                        EdgeInsets.only(top: 30.0),
+                    child: 
+                      FormContainerWidget(
+                        hintText: 'Username',
+                        isPasswordField: false,
+                      )
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 15.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                        width: 1.5, color: Color(0xffD7F2EC)),
-                      borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      label: Text('Email',style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)
-                            ),),),
-                      filled: false,
-                    ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 0.0),
+                    child: FormContainerWidget(
+                        hintText: 'Email',
+                        isPasswordField: false,
+                      )
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 15.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                        width: 1.5, color: Color(0xffD7F2EC)),
-                      borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      label: Text('Password',style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)
-                            ),),),
-                      suffixIcon: const Icon(Icons.visibility_off, color: Color(0xffD7F2EC)),
-                      filled: false,
-                    ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 0.0),
+                    child: FormContainerWidget(
+                        hintText: 'Password',
+                        isPasswordField: true,
+                      )
                 ),
 
-                Padding(
-                  padding: const EdgeInsets.only(right: 30.0,left: 30.0, top: 15.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                        width: 1.5, color: Color(0xffD7F2EC)),
-                      borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      label: Text('Re-enter Password',style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)
-                            ),),),
-                      suffixIcon: const Icon(Icons.visibility_off, color: Color(0xffD7F2EC)),
-                      filled: false,
-                    ),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 15.0),
+                    child: FormContainerWidget(
+                        hintText: 'Re-enter Password',
+                        isPasswordField: true,
+                      )
                 ),
 
                 const SizedBox(height: 40,),
-                Container(
-                    height: 45,
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff2D81FF),
-                      borderRadius: BorderRadius.circular(10.0),
-                      border: Border.all(
-                        color: const Color(0xff2D81FF),
-                        width: 3.0,
+                Stack(
+                  children: [
+                    Positioned(
+                        child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => const HomeScreen()));
+                              },
+                            child: Container(
+                              height: 45,
+                              width: 300,
+                              decoration: BoxDecoration(
+                                color: const Color(0xff2D81FF),
+                                borderRadius: BorderRadius.circular(10.0),
+                                border: Border.all(
+                                  color: const Color(0xff2D81FF),
+                                  width: 3.0,
+                                ),
+                              ),
+                              child: const Center(child: Text('REGISTER',
+                                  style: TextStyle(
+                                      color: Color(0xffF2FBF9),
+                                      letterSpacing: .8,
+                                        
+                                    ),),),),),
+
                       ),
-                    ),
-                    child: const Center(child: Text('REGISTER',
-                        style: TextStyle(
-                            color: Color(0xffF2FBF9),
-                            letterSpacing: .8,
-                              
-                          ),),), 
-                  ),
+                    ],
+                ),
                   Padding(
                     
                       padding: const EdgeInsets.only(top: 120,right: 100,left: 125),
@@ -131,13 +108,21 @@ class Register extends StatelessWidget {
                             fontSize: 10,
                             ),
                           ),),
-                          Text(' Login here.',
-                            style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC),
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold
-                            ),
-                        )),
+                          Positioned(child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => const LogIn()));
+                              },
+                                  child: Text(' Login here.',
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          color: Color(0xff4992FF),
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    
+                                    ),
+                              ),)
                         ],
                       )
                   )

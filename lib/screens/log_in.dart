@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:gigglygizmo/screens/homescreen.dart';
+import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -115,6 +116,7 @@ class LogIn extends StatelessWidget {
                           const EdgeInsets.only(top: 180, right: 110, left: 140),
                       child: Row(
                         children: [
+                          
                           Text(
                             'No account yet?',
                             style: GoogleFonts.roboto(
@@ -125,13 +127,21 @@ class LogIn extends StatelessWidget {
                             ),
                           ),
                           
-                          Text(' Register here.',
-                              style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                    color: Color(0xffD7F2EC),
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold),
-                              )),
+                          Positioned(child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => const Register()));
+                              },
+                                  child: Text(' Register here.',
+                                    style: GoogleFonts.roboto(
+                                      textStyle: const TextStyle(
+                                          color: Color(0xff25D1A8),
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    
+                                    ),
+                              ),)
                         ],
                       ))
                 ],
