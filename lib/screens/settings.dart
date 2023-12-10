@@ -1,9 +1,16 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
   const Settings({super.key});
-  
+
+  @override
+  State<Settings> createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +57,9 @@ class Settings extends StatelessWidget {
                   Center(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context,'/login');
+                          FirebaseAuth.instance.signOut();
+                          Navigator.pushNamed(context, "/login");
+                          Fluttertoast.showToast(msg: "Successfully logged out");
                         },
                         child: Container(
                           height: 45,
