@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:gigglygizmo/screens/convo.dart';
+import 'package:gigglygizmo/screens/convo_style.dart';
 import 'package:gigglygizmo/screens/homescreen.dart';
 import 'package:gigglygizmo/screens/log_in.dart';
+import 'package:gigglygizmo/screens/profile.dart';
+import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/screens/splashscreen.dart';
 import 'firebase_options.dart';
 // import 'package:gigglygizmo/screens/register.dart';
@@ -20,13 +24,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GigglyGizmo',
-      initialRoute: '/',
-      home:Splashscreen(
-        child: LogIn(),
-      )
+      routes: {
+        '/': (context) => const Splashscreen(
+          child: LogIn(),
+        ),
+        '/login': (context) => const LogIn(),
+        '/register': (context) => const Register(),
+        '/home': (context) => const HomeScreen(),
+        '/profile': (context) => const Profile(),
+        '/convoStyle': (context) => const Style(),
+        '/convo': (context) => const Conversation(),
+      },
+      // home:Splashscreen(
+      //   child: LogIn(),
+      // )
           
     );
   }
