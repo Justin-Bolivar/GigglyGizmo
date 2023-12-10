@@ -139,10 +139,7 @@ class _LogInState extends State<LogIn> {
                         Positioned(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Register()));
+                              Navigator.pushNamed(context,'/register');
                             },
                             child: Text(
                               ' Register here.',

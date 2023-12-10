@@ -178,17 +178,145 @@ class _ProfilewDataState extends State<ProfilewData> {
                 ),
               ),
               Positioned(
-                top: 530,
-                right: 138,
-                child: Text(
-                  'No Chat History',
-                  style: GoogleFonts.chivo(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w200,
-                    fontSize: 15,
+                top: 500,
+                left: 15,
+                child: Container(
+                  height: 80,
+                  width: 365,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffD9D9D9).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20.0),
+                    border: Border.all(
+                      color: const Color(0xffD9D9D9).withOpacity(0.1),
+                      width: 0,
+                    ),
                   ),
-                ),
+                )
               ),
+              Positioned(
+                top: 520,
+                left: 35,
+                child: Row(
+                  children: [
+                    Text(
+                      'November 11, 2023 |',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                    ),
+                    ),
+                    Text(
+                      ' Thurs',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 18,
+                      ),
+                    ),
+                  ],
+                )
+              ),
+              Positioned(
+                top: 545,
+                left: 35,
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.format_align_left_sharp,
+                      color: Color(0xff4992FF),
+                      size: 15,
+                    ),
+                    Text(
+                      ' Casual Conversation',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 12,
+                      ),
+                    ),
+                  ],
+                )
+              ),
+              const Positioned(
+                top: 530,
+                left: 340,
+                child: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color:Colors.white,size: 25,)),
+              // const SizedBox(
+              //     height: 30,
+              //   ),
+
+                //second chat history
+
+                Positioned(
+                top: 600,
+                left: 15,
+                child: Container(
+                  height: 80,
+                  width: 365,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffD9D9D9).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(20.0),
+                    border: Border.all(
+                      color: const Color(0xffD9D9D9).withOpacity(0.1),
+                      width: 0,
+                    ),
+                  ),
+                )
+              ),
+              Positioned(
+                top: 620,
+                left: 35,
+                child: Row(
+                  children: [
+                    Text(
+                      'November 11, 2023 |',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                    ),
+                    ),
+                    Text(
+                      ' Thurs',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 18,
+                      ),
+                    ),
+                  ],
+                )
+              ),
+              Positioned(
+                top: 645,
+                left: 35,
+                child: Row(
+                  children: [
+                    const Icon(
+                      Icons.format_align_left_sharp,
+                      color: Color(0xff4992FF),
+                      size: 15,
+                    ),
+                    Text(
+                      ' Casual Conversation',
+                      style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w100,
+                      fontSize: 12,
+                      ),
+                    ),
+                  ],
+                )
+              ),
+              const Positioned(
+                top: 630,
+                left: 340,
+                child: Icon(
+                  Icons.arrow_forward_ios_outlined,
+                  color:Colors.white,size: 25,)),
             ],
           ),
         ],
