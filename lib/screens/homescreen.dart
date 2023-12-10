@@ -22,7 +22,13 @@ class HomeScreen extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Center(
-            //need glowing effect add later
+            child: SvgPicture.asset(
+              'assets/Anim Icon.svg',
+              height: 270,
+              width: 270,
+            ),
+          ),
+          Center(
             child: SizedBox(
               height: 150,
               width: 150,
