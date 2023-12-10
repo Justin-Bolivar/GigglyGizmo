@@ -40,15 +40,16 @@ class Style extends StatelessWidget {
               ),
             ],
           ),
-          Stack(
+          const Stack(
             children: [
               Positioned(
-                top: 120,
-                left: 105,
-                child: Image.asset(
-                  'assets/Logo w text small.png',
-                  alignment: Alignment.center,
-                ),
+                top: 110,
+                left: 100,
+                child: Image(
+                  height: 100,
+                    width: 200,
+                    image: AssetImage(
+                        'assets/WhiteLogo_wText_horizontal.png')),
               ),
             ],
           ),
@@ -56,7 +57,7 @@ class Style extends StatelessWidget {
             children: [
               Positioned(
                 top: 200,
-                left: 75,
+                left: 95,
                 child: Text(
                   'Choose conversation Style',
                   style: GoogleFonts.chivo(
@@ -68,7 +69,7 @@ class Style extends StatelessWidget {
               ),
               Positioned(
                 top: 225,
-                left: 100,
+                left: 115,
                 child: Text(
                   'How would you like to converse ?',
                   style: GoogleFonts.chivo(
@@ -80,9 +81,9 @@ class Style extends StatelessWidget {
               ),
               Positioned(
                 bottom: 100,
-                left: 135,
+                left: 150,
                 child: Text(
-                  'Youre almoste there',
+                  'Youre almost there!',
                   style: GoogleFonts.chivo(
                     color: Colors.grey,
                     fontWeight: FontWeight.w200,
@@ -94,7 +95,7 @@ class Style extends StatelessWidget {
                 children: [
                   Positioned(
                     top: 350,
-                    left: 58,
+                    left: 50,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -134,7 +135,7 @@ class Style extends StatelessWidget {
             children: [
               Positioned(
                 top: 420,
-                left: 58,
+                left: 50,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.of(context).push(
