@@ -21,27 +21,19 @@ class HomeScreen extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Center(
-            child: Image.asset(
-              'assets/NeonCIrcle.png',
-              //fit: BoxFit.cover,
-              height: double.infinity,
-              width: double.infinity,
-              alignment: Alignment.center,
-            ),
-          ),
-          Center(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Style()),
-                );
-              },
-              child: Image.asset(
-                'assets/GizmoNeonLogo.png',
-                //fit: BoxFit.cover,
-                height: double.infinity,
-                width: double.infinity,
-                alignment: Alignment.center,
+            child: SizedBox(
+              height: 150,
+              width: 150,
+              child: FittedBox(
+                child: FloatingActionButton(
+                  backgroundColor: Colors.black,
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const Style()),
+                    );
+                  },
+                  child: Image.asset('assets/GizmoNeonLogo.png'),
+                ),
               ),
             ),
           ),
