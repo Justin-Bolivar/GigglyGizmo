@@ -95,24 +95,24 @@ class Style extends StatelessWidget {
                   Positioned(
                     top: 350,
                     left: 58,
-                    child: Container(
-                      height: 45,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        color: const Color(0xff25D1A8),
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const Conversation()),
+                        );
+                      },
+                      child: Container(
+                        height: 45,
+                        width: 300,
+                        decoration: BoxDecoration(
                           color: const Color(0xff25D1A8),
-                          width: 3.0,
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(
+                            color: const Color(0xff25D1A8),
+                            width: 3.0,
+                          ),
                         ),
-                      ),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const Conversation()),
-                          );
-                        },
                         child: Center(
                           child: Text(
                             'CASUAL',
@@ -128,43 +128,43 @@ class Style extends StatelessWidget {
                   ),
                 ],
               ),
-              Stack(
-                children: [
-                  Positioned(
-                    top: 420,
-                    left: 58,
-                    child: Container(
-                      height: 45,
-                      width: 300,
-                      decoration: BoxDecoration(
+            ],
+          ),
+          Stack(
+            children: [
+              Positioned(
+                top: 420,
+                left: 58,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const Conversation()),
+                    );
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff2D81FF),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
                         color: const Color(0xff2D81FF),
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(
-                          color: const Color(0xff2D81FF),
-                          width: 3.0,
-                        ),
+                        width: 3.0,
                       ),
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const Conversation()),
-                          );
-                        },
-                        child: Center(
-                          child: Text(
-                            'FORMAL',
-                            style: GoogleFonts.chivo(
-                              color: const Color(0xffF2FBF9),
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
-                            ),
-                          ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'FORMAL',
+                        style: GoogleFonts.chivo(
+                          color: const Color(0xffF2FBF9),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
                         ),
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
             ],
           ),
