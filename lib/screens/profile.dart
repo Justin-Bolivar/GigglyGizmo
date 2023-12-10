@@ -49,12 +49,16 @@ class Profile extends StatelessWidget {
                   ),
                 ),
               ),
-              const Positioned(
+              Positioned(
                 top: 55,
                 right: 30,
-                child: Icon(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context,'/settings');
+                  }, child:const Icon(
+                  //from image, i changed it to an icon, blurry ang image.
                   Icons.settings,
-                  color: Colors.white,
+                  color: Colors.white,),
                 ),
               ),
             ],

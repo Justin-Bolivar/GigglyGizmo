@@ -29,16 +29,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'GigglyGizmo',
       routes: {
-        '/': (context) => const Settings(),
-        // '/': (context) => const Splashscreen(
-        //   child: LogIn(),
-        // ),
+        '/': (context) => const Splashscreen(
+          child: LogIn(),
+        ),
         '/login': (context) => const LogIn(),
         '/register': (context) => const Register(),
         '/home': (context) => const HomeScreen(),
         '/profile': (context) => const Profile(),
         '/convoStyle': (context) => const Style(),
         '/convo': (context) => const Conversation(),
+        '/settings': (context) => const Settings(),
+
       }
           
     );
