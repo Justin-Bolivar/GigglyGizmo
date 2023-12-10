@@ -5,6 +5,7 @@ import 'package:gigglygizmo/screens/convo_style.dart';
 import 'package:gigglygizmo/screens/homescreen.dart';
 import 'package:gigglygizmo/screens/log_in.dart';
 import 'package:gigglygizmo/screens/profile.dart';
+import 'package:gigglygizmo/screens/profile_w_data.dart';
 import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/screens/settings.dart';
 import 'package:gigglygizmo/screens/splashscreen.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         '/convoStyle': (context) => const Style(),
         '/convo': (context) => const Conversation(),
         '/settings': (context) => const Settings(),
+        '/profileWData': (context) => const ProfilewData(),
 
       }
           
