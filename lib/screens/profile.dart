@@ -43,18 +43,18 @@ class Profile extends StatelessWidget {
                           builder: (context) => const HomeScreen()),
                     );
                   },
-                  child: Image.asset(
-                    'assets/arrowleft.png',
-                    alignment: Alignment.topRight,
+                  child: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: 55,
                 right: 30,
-                child: Image.asset(
-                  'assets/Settings Icon.png',
-                  alignment: Alignment.topRight,
+                child: Icon(            //from image, i changed it to an icon, blurry ang image.
+                  Icons.settings,
+                  color: Colors.white,
                 ),
               ),
             ],
