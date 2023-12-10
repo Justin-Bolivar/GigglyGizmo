@@ -32,9 +32,9 @@ class Style extends StatelessWidget {
                           builder: (context) => const HomeScreen()),
                     );
                   },
-                  child: Image.asset(
-                    'assets/arrowleft.png',
-                    alignment: Alignment.topRight,
+                  child: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
                   ),
                 ),
               ),

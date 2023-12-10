@@ -54,12 +54,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 top: 55,
                 left: 30,
-                child: Image.asset(
-                  'assets/Settings Icon.png',
-                  alignment: Alignment.topLeft,
+                child: Icon(            //from image, i changed it to an icon, blurry ang image.
+                  Icons.settings,
+                  color: Colors.white,
                 ),
               ),
             ],
