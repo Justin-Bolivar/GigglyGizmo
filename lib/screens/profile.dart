@@ -91,6 +91,14 @@ class Profile extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                top: 350,
+                left: 60,
+                child:GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context,'/profileWData');
+                  } )
+              )
             ],
           ),
           Stack(
