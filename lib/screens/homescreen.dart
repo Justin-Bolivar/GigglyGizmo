@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Style()),
                     );
                   },
-                  child: Image.asset('assets/GizmoNeonLogo.png'),
+                  child: const Image(image: AssetImage('assets/GizmoNeonLogo.png')),
                 ),
               ),
             ),
