@@ -1,7 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'screens/homescreen.dart';
+import 'package:gigglygizmo/screens/homescreen.dart';
+import 'package:gigglygizmo/screens/log_in.dart';
+import 'package:gigglygizmo/screens/splashscreen.dart';
+// import 'package:gigglygizmo/screens/register.dart';
 
-void main() {
+// import 'screens/homescreen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -16,7 +24,9 @@ class MyApp extends StatelessWidget {
       title: 'GigglyGizmo',
       initialRoute: '/',
       home:
-          HomeScreen(), //ichange ni para maka view ka sa imong page ganahan i tanaw na screen
+          Splashscreen(           //splashscreen which will be directed to loginpage after
+            child: LogIn(),
+          ), 
     );
   }
 }

@@ -1,10 +1,8 @@
 //screen before login
 import 'package:flutter/material.dart';
-import 'package:gigglygizmo/screens/log_in.dart';
-
 class Splashscreen extends StatefulWidget {
-  const Splashscreen({Key? key}) : super(key: key);
-
+  final Widget? child;
+  const Splashscreen({Key? key, this.child}) : super(key: key);
   @override
   State<Splashscreen> createState() => _SplashscreenState();
 }
@@ -16,7 +14,7 @@ class _SplashscreenState extends State<Splashscreen> {
     Future.delayed(const Duration(seconds: 4), () {
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => const LogIn()),
+          MaterialPageRoute(builder: (context) => widget.child!),
           (route) => false);
     });
   }
