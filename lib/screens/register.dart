@@ -4,7 +4,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gigglygizmo/screens/homescreen.dart';
 import 'package:gigglygizmo/screens/log_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
@@ -175,20 +174,19 @@ class _RegisterState extends State<Register> {
       isRegister = true;
     });
 
-    // String username = _usernameController.text;
+    String username = _usernameController.text;
     String email = _emailController.text;
     String password = _passwordController.text;
     String verifyPassword = _passwordVerifyController.text;
 
     User? user = await _auth.registerWithEmailAndPassword(email, password);
-
     setState(() {
       isRegister = false;
     });
-    if (user != null && password==verifyPassword) {
-      Fluttertoast.showToast(msg: "User is successfully created");
+    if (user != null && password == verifyPassword) {
+      Fluttertoast.showToast(msg: "$username successfully registered");
       Navigator.pushNamed(context, "/home");
-      } else if (password != verifyPassword) {
+    } else if (password != verifyPassword) {
       Fluttertoast.showToast(msg: "Password doesn't match");
     } else {
       Fluttertoast.showToast(msg: "Some error happend");
