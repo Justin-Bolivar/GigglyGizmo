@@ -1,6 +1,8 @@
 // after login move to homescreen
 
 import 'package:flutter/material.dart';
+import 'package:gigglygizmo/screens/homescreen.dart';
+import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogIn extends StatelessWidget {
@@ -9,6 +11,7 @@ class LogIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           const Image(
@@ -18,7 +21,6 @@ class LogIn extends StatelessWidget {
               image: AssetImage('assets/Background.png')),
           Align(
             alignment: Alignment.center,
-            child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,51 +33,24 @@ class LogIn extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  Padding(
+                  const Padding(
                     padding:
-                        const EdgeInsets.only(right: 30.0, left: 30.0, top: 30.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              width: 1.5, color: Color(0xffD7F2EC)),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        label: Text(
-                          'Username',
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)),
-                          ),
-                        ),
-                        fillColor: const Color(0xffD8D8DD),
-                        filled: false,
-                      ),
-                    ),
+                        EdgeInsets.only(top: 30.0),
+                    child: 
+                      FormContainerWidget(
+                        hintText: 'Username',
+                        isPasswordField: false,
+                      )
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 15.0),
+                    child: FormContainerWidget(
+                        hintText: 'Password',
+                        isPasswordField: true,
+                      )
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                        right: 30.0, left: 30.0, top: 15.0, bottom: 15.0),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                              width: 1.5, color: Color(0xffD7F2EC)),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        label: Text(
-                          'Password',
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(color: Color(0xffD7F2EC)),
-                          ),
-                        ),
-                        suffixIcon: const Icon(Icons.visibility_off,
-                            color: Color(0xffD7F2EC)),
-                        filled: false,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30, top: 0, right: 19),
+                    padding: const EdgeInsets.only(left: 35, top: 0, right: 19),
                     child: Row(
                       children: [
                         // Checkbox(
@@ -95,26 +70,45 @@ class LogIn extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  Container(
-                    height: 45,
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: const Color(0xff25D1A8),
-                      borderRadius: BorderRadius.circular(10.0),
-                      border: Border.all(
-                        color: const Color(0xff25D1A8),
-                        width: 3.0,
-                      ),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'LOGIN',
-                        style: TextStyle(
-                          color: Color(0xff2C4B44),
-                          letterSpacing: .8,
+                  // GestureDetector(
+                  //   onTap: (){
+                  //     Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  //   }
+                  // ),
+                  Stack(
+                    children: [
+                      Positioned(
+                        child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => const HomeScreen()));
+                              },
+                            
+                          child: Container(
+                            height: 45,
+                            width: 300,
+                            decoration: BoxDecoration(
+                              color: const Color(0xff25D1A8),
+                              borderRadius: BorderRadius.circular(10.0),
+                              border: Border.all(
+                                color: const Color(0xff25D1A8),
+                                width: 3.0,),),
+
+                            child: const Center(
+                              child: Text(
+                                'LOGIN',
+                                style: TextStyle(
+                                  color: Color(0xff2C4B44),
+                                  letterSpacing: .8,
+                                ),
+                                
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                   Padding(
                       padding:
@@ -142,7 +136,6 @@ class LogIn extends StatelessWidget {
                       ))
                 ],
               ),
-            ),
           )
         ],
       ),
