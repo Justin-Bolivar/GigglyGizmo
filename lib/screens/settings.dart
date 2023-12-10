@@ -22,11 +22,16 @@ class Settings extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Image(
-                    height: 100,
-                    width: 100,
-                    image: AssetImage(
-                        'assets/sad_gizmo_logo.png')),
+                const Padding(
+                  padding:
+                        EdgeInsets.only(top: 80),
+                    child: Image(
+                        height: 100,
+                        width: 100,
+                        image: AssetImage(
+                            'assets/sad_gizmo_logo.png')),
+                  
+                ),
                 Padding(padding:
                         const EdgeInsets.only(bottom: 100),
                         child: Text(
@@ -40,10 +45,6 @@ class Settings extends StatelessWidget {
                           ),
                         ),
                         ),
-                // const SizedBox(
-                //   height: 30,
-                // ),
-
                 Stack(
                 children: [
                   Center(
@@ -78,6 +79,40 @@ class Settings extends StatelessWidget {
                 ],
               ),
 
+              const SizedBox(
+                  height: 100,
+                ),
+                Padding(padding:
+                        const EdgeInsets.only(top: 90),
+                        child: Text(
+                          
+                          "_____________________________________________________________________________________________________________________________________________________________________________________________________________________________________________",
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 3,
+                            ),
+                          ),
+                        ),
+                        ),
+
+              Padding(padding:
+                        const EdgeInsets.only(top: 40,bottom: 10),
+                        child: Text(
+                          
+                          "Delete Account",
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold
+                            ),
+                          ),
+                        ),
+                        ),
+                      const Icon(
+                        Icons.delete_forever_sharp,
+                        color: Colors.white),
               ]
             )
           ),
