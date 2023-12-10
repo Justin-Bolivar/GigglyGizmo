@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           Image.asset(
             'assets/Background.png',
             fit: BoxFit.cover,
@@ -52,7 +52,7 @@ class Profile extends StatelessWidget {
               const Positioned(
                 top: 55,
                 right: 30,
-                child: Icon(            //from image, i changed it to an icon, blurry ang image.
+                child: Icon(
                   Icons.settings,
                   color: Colors.white,
                 ),
@@ -63,29 +63,27 @@ class Profile extends StatelessWidget {
             children: [
               Positioned(
                 top: 350,
-                left: 95,
-                child: Image.asset(
-                  'assets/GlowButton.png',
-                  alignment: Alignment.center,
-                ),
-              ),
-              Positioned(
-                top: 369,
-                left: 113,
-                child: Image.asset(
-                  'assets/LanguageProficiencyButton.png',
-                  alignment: Alignment.center,
-                ),
-              ),
-              Positioned(
-                top: 376,
-                left: 118,
-                child: Text(
-                  'TAKE LANGUAGE PROFICIENCY TEST',
-                  style: GoogleFonts.chivo(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 11,
+                left: 60,
+                child: Container(
+                  height: 45,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffBED8FF),
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: const Color(0xffBED8FF),
+                      width: 3.0,
+                    ),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'TAKE LANGUAGE PROFICIENCY TEST',
+                      style: GoogleFonts.chivo(
+                        color: const Color(0xff404040),
+                        fontWeight: FontWeight.w300,
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 ),
               ),
