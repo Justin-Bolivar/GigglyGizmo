@@ -130,6 +130,7 @@ class LogIn extends StatelessWidget {
                               ),
                             ),
                           ),
+                          
                           Text(' Register here.',
                               style: GoogleFonts.roboto(
                                 textStyle: const TextStyle(
