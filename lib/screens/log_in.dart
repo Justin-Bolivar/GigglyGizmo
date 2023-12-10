@@ -90,12 +90,6 @@ class _LogInState extends State<LogIn> {
                 const SizedBox(
                   height: 40,
                 ),
-                // GestureDetector(
-                //   onTap: (){
-                //     Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => const HomeScreen()));
-                //   }
-                // ),
                 Stack(
                   children: [
                     Positioned(

@@ -8,32 +8,43 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: <Widget>[
+        children: [
           const Image(
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
               image: AssetImage('assets/Background.png')),
 
-          Stack(
-            children: [
-              Positioned(
-                top: 55,
-                left: 30,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context,'/home');
-                  },
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ],
-          ),
           
-          Stack(
+           Align(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Image(
+                    height: 100,
+                    width: 100,
+                    image: AssetImage(
+                        'assets/sad_gizmo_logo.png')),
+                Padding(padding:
+                        const EdgeInsets.only(bottom: 100),
+                        child: Text(
+                          
+                          "You're leaving Gizmo already?",
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ),
+                        ),
+                // const SizedBox(
+                //   height: 30,
+                // ),
+
+                Stack(
                 children: [
                   Center(
                       child: GestureDetector(
@@ -66,6 +77,29 @@ class Settings extends StatelessWidget {
                   ),
                 ],
               ),
+
+              ]
+            )
+          ),
+          Stack(
+            children: [
+              Positioned(
+                top: 55,
+                left: 30,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context,'/home');
+                  },
+                  child: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          
+          
         ]
       )
     );
