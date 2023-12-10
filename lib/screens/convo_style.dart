@@ -93,16 +93,8 @@ class Style extends StatelessWidget {
               Stack(
                 children: [
                   Positioned(
-                    top: 332,
-                    left: 43,
-                    child: Image.asset(
-                      'assets/casual glow.png',
-                      alignment: Alignment.center,
-                    ),
-                  ),
-                  Positioned(
                     top: 350,
-                    left: 60,
+                    left: 58,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -110,41 +102,69 @@ class Style extends StatelessWidget {
                               builder: (context) => const Conversation()),
                         );
                       },
-                      child: Image.asset(
-                        'assets/casualbutton.png',
-                        alignment: Alignment.center,
+                      child: Container(
+                        height: 45,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          color: const Color(0xff25D1A8),
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(
+                            color: const Color(0xff25D1A8),
+                            width: 3.0,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'CASUAL',
+                            style: GoogleFonts.chivo(
+                              color: const Color(0xff2C4B44),
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
-              Stack(
-                children: [
-                  Positioned(
-                    top: 400,
-                    left: 43,
-                    child: Image.asset(
-                      'assets/formalglow.png',
-                      alignment: Alignment.center,
+            ],
+          ),
+          Stack(
+            children: [
+              Positioned(
+                top: 420,
+                left: 58,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => const Conversation()),
+                    );
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 300,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff2D81FF),
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: const Color(0xff2D81FF),
+                        width: 3.0,
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    top: 420,
-                    left: 60,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => const Conversation()),
-                        );
-                      },
-                      child: Image.asset(
-                        'assets/formalbutton.png',
-                        alignment: Alignment.center,
+                    child: Center(
+                      child: Text(
+                        'FORMAL',
+                        style: GoogleFonts.chivo(
+                          color: const Color(0xffF2FBF9),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                        ),
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
             ],
           ),
