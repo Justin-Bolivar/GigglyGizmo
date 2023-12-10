@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981900651350",
+    "project_id": "gigglygizmo",
+    "storage_bucket": "gigglygizmo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981900651350:android:3e8770b90190b6713b44f7",
+        "android_client_info": {
+          "package_name": "com.example.gigglygizmo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDXWD9KE9hZ_eLyGpVf2aSahNUqXquWvQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
