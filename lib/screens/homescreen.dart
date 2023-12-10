@@ -1,6 +1,7 @@
 // tap on GigglyGizmo Icon move to convo style page
 // tap on user picture move to profile page
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gigglygizmo/screens/convo_style.dart';
 import 'package:gigglygizmo/screens/profile.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +22,7 @@ class HomeScreen extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Center(
+            //need glowing effect add later
             child: SizedBox(
               height: 150,
               width: 150,
@@ -57,7 +59,8 @@ class HomeScreen extends StatelessWidget {
               const Positioned(
                 top: 55,
                 left: 30,
-                child: Icon(            //from image, i changed it to an icon, blurry ang image.
+                child: Icon(
+                  //from image, i changed it to an icon, blurry ang image.
                   Icons.settings,
                   color: Colors.white,
                 ),
