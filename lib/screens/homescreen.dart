@@ -40,7 +40,8 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => const Style()),
                     );
                   },
-                  child: const Image(image: AssetImage('assets/GizmoNeonLogo.png')),
+                  child: const Image(
+                      image: AssetImage('assets/GizmoNeonLogo.png')),
                 ),
               ),
             ),
@@ -62,18 +63,19 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-               Positioned(
+              Positioned(
                 top: 55,
                 left: 30,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context,'/settings');
-                  }, child:const Icon(
-                  //from image, i changed it to an icon, blurry ang image.
-                  Icons.settings,
-                  color: Colors.white,),
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                  child: const Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
                 ),
-                )
+              )
             ],
           ),
           Stack(

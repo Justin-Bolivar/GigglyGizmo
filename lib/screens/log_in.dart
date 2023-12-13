@@ -3,7 +3,6 @@
 // ignore_for_file: prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gigglygizmo/user_authentication/firebase_auth_services.dart';
@@ -55,14 +54,14 @@ class _LogInState extends State<LogIn> {
                 const SizedBox(
                   height: 30,
                 ),
-                 Padding(
+                Padding(
                     padding: const EdgeInsets.only(top: 30.0),
                     child: FormContainerWidget(
                       hintText: 'Email',
                       isPasswordField: false,
                       controller: _emailController,
                     )),
-                 Padding(
+                Padding(
                     padding: const EdgeInsets.only(bottom: 15.0),
                     child: FormContainerWidget(
                       hintText: 'Password',
@@ -139,7 +138,7 @@ class _LogInState extends State<LogIn> {
                         Positioned(
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.pushNamed(context,'/register');
+                              Navigator.pushNamed(context, '/register');
                             },
                             child: Text(
                               ' Register here.',
@@ -172,9 +171,11 @@ class _LogInState extends State<LogIn> {
 
     User? user = await _auth.loginWithEmailAndPassword(email, password);
 
-    setState(() {
-      _isLoggingIn = false;
-    });
+    setState(
+      () {
+        _isLoggingIn = false;
+      },
+    );
 
     // ignore: unnecessary_null_comparison
     if (user != null) {

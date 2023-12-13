@@ -24,11 +24,16 @@ class Profile extends StatelessWidget {
               Positioned(
                 top: 100,
                 left: 100,
-                child: Image.asset(
-                  'assets/BigProfile.png',
-                  alignment: Alignment.center,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profileWData');
+                  },
+                  child: Image.asset(
+                    'assets/BigProfile.png',
+                    alignment: Alignment.center,
+                  ),
                 ),
-              ),
+              )
             ],
           ),
           Stack(
@@ -54,11 +59,12 @@ class Profile extends StatelessWidget {
                 right: 30,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context,'/settings');
-                  }, child:const Icon(
-                  //from image, i changed it to an icon, blurry ang image.
-                  Icons.settings,
-                  color: Colors.white,),
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                  child: const Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
@@ -91,14 +97,6 @@ class Profile extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                top: 350,
-                left: 60,
-                child:GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context,'/profileWData');
-                  } )
-              )
             ],
           ),
           Stack(
