@@ -10,16 +10,15 @@ import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/screens/settings.dart';
 import 'package:gigglygizmo/screens/splashscreen.dart';
 import 'package:gigglygizmo/screens/update.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'firebase_options.dart';
-// import 'package:gigglygizmo/screens/register.dart';
-
-// import 'screens/homescreen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Hive.initFlutter();
   runApp(const MyApp());
 }
 

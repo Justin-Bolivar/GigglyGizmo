@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';
 import 'package:gigglygizmo/user_authentication/firebase_auth_services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -179,6 +180,9 @@ class _RegisterState extends State<Register> {
     String email = _emailController.text;
     String password = _passwordController.text;
     String verifyPassword = _passwordVerifyController.text;
+
+    var userBox = Hive.box('userBox');
+    userBox.put('username', username);
 
     User? user = await _auth.registerWithEmailAndPassword(email, password);
     setState(() {

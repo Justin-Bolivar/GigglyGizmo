@@ -3,9 +3,77 @@
 import 'package:flutter/material.dart';
 import 'package:gigglygizmo/screens/homescreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
+
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  String _username = "John Doe"; // Set a default username
+
+  @override
+  void initState() {
+    super.initState();
+    _initHive();
+  }
+
+  Future<void> _initHive() async {
+    await Hive.openBox('userBox'); // Open the Hive box before using it
+    _loadUsernameFromHive();
+  }
+
+  Future<void> _changeUsernameDialog() async {
+    TextEditingController _usernameController = TextEditingController();
+
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Change Username'),
+          content: TextField(
+            controller: _usernameController,
+            decoration: InputDecoration(labelText: 'New Username'),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () async {
+                setState(() {
+                  _username = _usernameController.text;
+                });
+                _storeUsernameInHive(_username);
+                Navigator.of(context).pop();
+              },
+              child: const Text('Save'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _storeUsernameInHive(String username) {
+    // Store the username in Hive
+    var userBox = Hive.box('userBox');
+    userBox.put('username', username);
+  }
+
+  Future<void> _loadUsernameFromHive() async {
+    var userBox =
+        await Hive.openBox('userBox'); // Open the Hive box before using it
+    setState(() {
+      _username = userBox.get('username', defaultValue: "John Doe");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,12 +172,15 @@ class Profile extends StatelessWidget {
               Positioned(
                 top: 280,
                 left: 165,
-                child: Text(
-                  'UserName',
-                  style: GoogleFonts.chivo(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 20,
+                child: GestureDetector(
+                  onTap: _changeUsernameDialog,
+                  child: Text(
+                    _username,
+                    style: GoogleFonts.chivo(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               ),
