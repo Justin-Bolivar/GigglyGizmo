@@ -21,8 +21,8 @@ class _SettingsState extends State<Settings> {
           width: double.infinity,
           image: AssetImage('assets/Background.png')),
       Positioned(
-        top: 270,
-        left: 55,
+        top: 350,
+        left: 48,
         child: Center(
           child: GestureDetector(
             onTap: () {
@@ -111,6 +111,8 @@ class _SettingsState extends State<Settings> {
                 ),
               ],
             ),
+            //add here
+            
             const SizedBox(
               height: 100,
             ),
