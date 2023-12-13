@@ -79,6 +79,8 @@ class _SettingsState extends State<Settings> {
                 ),
               ],
             ),
+            //add here
+            
             const SizedBox(
               height: 100,
             ),

@@ -68,11 +68,12 @@ class Conversation extends StatelessWidget {
                   padding: const EdgeInsets.only(
                     right: 30.0,
                     left: 30.0,
-                    top: 620.0,
+                    top: 780.0,
                   ),
                   child: TextField(
+                  
                     decoration: InputDecoration(
-                      suffixIcon: Image.asset('assets/mic.png'),
+                      suffixIcon: Image.asset('assets/mic.png',height: 10,width: 10,),
                       labelText: 'type message here...',
                       labelStyle: GoogleFonts.chivo(
                         color: Colors.white,
@@ -83,6 +84,7 @@ class Conversation extends StatelessWidget {
                         borderSide: const BorderSide(
                             width: 1.5, color: Color(0xffD7F2EC)),
                         borderRadius: BorderRadius.circular(50.0),
+                        
                       ),
                       fillColor: const Color(0xffD8D8DD),
                       filled: false,
