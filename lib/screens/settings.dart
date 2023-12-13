@@ -20,6 +20,38 @@ class _SettingsState extends State<Settings> {
           height: double.infinity,
           width: double.infinity,
           image: AssetImage('assets/Background.png')),
+      Positioned(
+        top: 270,
+        left: 55,
+        child: Center(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, "/update");
+            },
+            child: Container(
+              height: 45,
+              width: 300,
+              decoration: BoxDecoration(
+                color: const Color(0xff76928B).withOpacity(.1),
+                borderRadius: BorderRadius.circular(10.0),
+                border: Border.all(
+                  color: const Color(0xff76928B).withOpacity(.2),
+                  width: 0.1,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  'UPDATE EMAIL',
+                  style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                        color: Color(0xffC4D0CD), letterSpacing: .6),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
       Align(
         alignment: Alignment.center,
         child: Column(

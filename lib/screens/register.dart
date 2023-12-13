@@ -4,6 +4,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gigglygizmo/screens/profile.dart';
 import 'package:gigglygizmo/screens/log_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gigglygizmo/user_authentication/widgets/form_container_widget.dart';

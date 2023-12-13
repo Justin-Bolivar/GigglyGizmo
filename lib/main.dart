@@ -9,6 +9,7 @@ import 'package:gigglygizmo/screens/profile_w_data.dart';
 import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/screens/settings.dart';
 import 'package:gigglygizmo/screens/splashscreen.dart';
+import 'package:gigglygizmo/screens/update.dart';
 import 'firebase_options.dart';
 // import 'package:gigglygizmo/screens/register.dart';
 
@@ -16,7 +17,9 @@ import 'firebase_options.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -27,23 +30,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'GigglyGizmo',
-      routes: {
-        '/': (context) => const Splashscreen(
-          child: LogIn(),
-        ),
-        '/login': (context) => const LogIn(),
-        '/register': (context) => const Register(),
-        '/home': (context) => const HomeScreen(),
-        '/profile': (context) => const Profile(),
-        '/convoStyle': (context) => const Style(),
-        '/convo': (context) => const Conversation(),
-        '/settings': (context) => const Settings(),
-        '/profileWData': (context) => const ProfilewData(),
-
-      }
-          
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'GigglyGizmo',
+        routes: {
+          '/': (context) => const Splashscreen(
+                child: LogIn(),
+              ),
+          '/login': (context) => const LogIn(),
+          '/register': (context) => const Register(),
+          '/home': (context) => const HomeScreen(),
+          '/profile': (context) => const Profile(),
+          '/convoStyle': (context) => const Style(),
+          '/convo': (context) => const Conversation(),
+          '/settings': (context) => const Settings(),
+          '/profileWData': (context) => const ProfilewData(),
+          '/update': (context) => const Update(),
+        });
   }
 }
