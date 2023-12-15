@@ -9,7 +9,6 @@ import 'package:gigglygizmo/screens/profile_w_data.dart';
 import 'package:gigglygizmo/screens/register.dart';
 import 'package:gigglygizmo/screens/settings.dart';
 import 'package:gigglygizmo/screens/splashscreen.dart';
-import 'package:gigglygizmo/screens/update.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'firebase_options.dart';
 
@@ -43,7 +42,6 @@ class MyApp extends StatelessWidget {
           '/convo': (context) => const Conversation(),
           '/settings': (context) => const Settings(),
           '/profileWData': (context) => const ProfilewData(),
-          '/update': (context) => const Update(),
         });
   }
 }

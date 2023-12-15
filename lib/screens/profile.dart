@@ -13,7 +13,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  String _username = "John Doe"; // Set a default username
+  String _username = "UserName";
 
   @override
   void initState() {
@@ -22,7 +22,7 @@ class _ProfileState extends State<Profile> {
   }
 
   Future<void> _initHive() async {
-    await Hive.openBox('userBox'); // Open the Hive box before using it
+    await Hive.openBox('userBox');
     _loadUsernameFromHive();
   }
 
@@ -68,8 +68,7 @@ class _ProfileState extends State<Profile> {
   }
 
   Future<void> _loadUsernameFromHive() async {
-    var userBox =
-        await Hive.openBox('userBox'); // Open the Hive box before using it
+    var userBox = await Hive.openBox('userBox');
     setState(() {
       _username = userBox.get('username', defaultValue: "John Doe");
     });
